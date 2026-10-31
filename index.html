@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orlendo | Compare Your Loan Options Stress-Free</title>
     <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-white text-zinc-900 min-h-screen flex items-center justify-center p-4 antialiased">
 
     <!-- Centered Lead Gen Card -->
     <div class="w-full max-w-md p-8 border border-zinc-200 rounded-2xl shadow-xl bg-white relative">
         <div>
             <h2 class="text-xl font-bold tracking-tight text-red-600">Compare Your Loan Options</h2>
-        <p class="text-xs text-zinc-500 mt-0.5" id="header-subtitle">Get matched with the nation's top lenders!</p>
-        <span id="step-indicator" class="text-xs font-semibold px-2.5 py-1 rounded-full bg-red-50 text-red-700 border border-ed-200">
-            Step 1 of 3
-        </span>
+            <p class="text-xs text-zinc-500 mt-0.5" id="header-subtitle">Get matched with the nation's top lenders!</p>
+            <span id="step-indicator"
+                class="text-xs font-semibold px-2.5 py-1 rounded-full bg-red-50 text-red-700 border border-ed-200">
+                Step 1 of 3
+            </span>
         </div>
 
         <form id="leadForm" novalidate>
@@ -27,49 +30,68 @@
                 value="https://cert.trustedform.com/mock-cert-67890">
 
             <!-- Step 1: Loan Purpose & Property Numbers -->
-             <div class="step block space-y-4" id="step-1">
+            <div class="step block space-y-4" id="step-1">
 
                 <!-- Purchase & Refinance Segmented Toggle -->
-                 <div>
+                <div>
                     <label class="block text-sm font-semibold text-zinc-800 mb-1.5">What is your loan goal?</label>
                     <div class="grid grid-cols-2 p-1 bg-zinc-100 rounded-lg border border-zinc-200">
-                        <button type="button" id="btn-toggle-purchase" onclick="setLoanType('purchase')" class="py-2 text-xs font-bold rounded-md bg-white text-red-600 shadow-sm transition">
+                        <button type="button" id="btn-toggle-purchase" onclick="setLoanType('purchase')"
+                            class="py-2 text-xs font-bold rounded-md bg-white text-red-600 shadow-sm transition">
                             Purchase
                         </button>
-                        <button type="button" id="btn-toggle-refinance" onclick="setLoanType('refinance')" class="py-2 text-xs font-bold rounded-md text-zinc-600 hover:text-zinc-900 transition">
+                        <button type="button" id="btn-toggle-refinance" onclick="setLoanType('refinance')"
+                            class="py-2 text-xs font-bold rounded-md text-zinc-600 hover:text-zinc-900 transition">
                             Refinance
                         </button>
                     </div>
                     <input type="hidden" id="loan_purpose" name="loan_purpose" value="purchase">
-                 </div>
+                </div>
 
-                 <!-- Property Value Field (Dynamic Label) -->
-                  <div>
-                    <label id="property_value_labe" for="property_value" class="block text-sm font-semibold text-zinc-800 mb-1.5">
+                <!-- Property Value Field (Dynamic Label) -->
+                <div>
+                    <label id="property_value_labe" for="property_value"
+                        class="block text-sm font-semibold text-zinc-800 mb-1.5">
                         Estimated Purchase Price ($)
                     </label>
-                    <input type="number" id="property_value" name="property_value" value="4500000" min="250000" step="5000" required class="w-full px-3.5 py-2.5 border border-zinc-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition">
-                  </div>
+                    <input type="number" id="property_value" name="property_value" value="4500000" min="250000"
+                        step="5000" required
+                        class="w-full px-3.5 py-2.5 border border-zinc-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition">
+                </div>
 
-                  <!-- Purchase-Only: Down Payment -->
-                   <div id="purchase_fields" class="block">
-                    <label for="down_payment" class="block text-sm font-semibold text-zinc-800 mb-1.5">Estimated Down Payment ($)</label>
-                    <input type="number" id="down_payment" name="down_payment" value="90000" min="0" step="1000" required class="w-full px-3.5 py-2.5 border border-zinc-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition">
-                   </div>
+                <!-- Purchase-Only: Down Payment -->
+                <div id="purchase_fields" class="block">
+                    <label for="down_payment" class="block text-sm font-semibold text-zinc-800 mb-1.5">Estimated Down
+                        Payment ($)</label>
+                    <input type="number" id="down_payment" name="down_payment" value="90000" min="0" step="1000"
+                        required
+                        class="w-full px-3.5 py-2.5 border border-zinc-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition">
+                </div>
 
                 <!-- Refinance-Only: Balance & Goal -->
-                 <div id="refinance_fields" class="hidden space-y-4">
-                    <label for="current_balance" class="block text-sm font-semibold text-zinc-800 mb-1.5">Current Mortgage Balance ($)</label>
-                    <input type="number" id="current_balance" name="current_balance" value="320000" min="10000" step="5000" disabled class="w-full px-3.5 py-2.5 border border-zinc-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition">
-                 </div>
-                 <label for="refi_goal" class="block text-sm font-semibold text-zinc-800 mb-1.5">Primary Reinfance Goal</label>
-                 <select id="refi_goal" name="refi_goal" disabled class="w-full px-3.5 py-2.5 border border-zinc-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition"></select>
-                 <option value="lower_monthly_payment">Lower Monthly Payment</option>
-                 <option value="cash_out_equity">Take Cash Out of Home</option>
-                 <option value="shorten_term">Shorten Loan Term</option>
-             </div>
+                <div id="refinance_fields" class="hidden space-y-4">
+                    <label for="current_balance" class="block text-sm font-semibold text-zinc-800 mb-1.5">Current
+                        Mortgage Balance ($)</label>
+                    <input type="number" id="current_balance" name="current_balance" value="320000" min="10000"
+                        step="5000" disabled
+                        class="w-full px-3.5 py-2.5 border border-zinc-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition">
+                </div>
+                <div>
+                <label for="refi_goal" class="block text-sm font-semibold text-zinc-800 mb-1.5">Primary Reinfance
+                    Goal</label>
+                <select id="refi_goal" name="refi_goal" disabled
+                    class="w-full px-3.5 py-2.5 border border-zinc-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition">
+                    <option value="lower_monthly_payment">Lower Monthly Payment</option>
+                    <option value="cash_out_equity">Take Cash Out of Home</option>
+                    <option value="shorten_term">Shorten Loan Term</option>
+                </select>
+            </div>
+            </div>
+
+            <button> Continue &rarr; </button>
         </form>
     </div>
     <script src="app.js"></script>
 </body>
+
 </html>

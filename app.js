@@ -6,4 +6,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const loanPurposeInput = document.getElementById('loan_purpose');
     const btnTogglePurchase = document.getElementById('btn-toggle-purchase');
     const propLabel = document.getElementById('btn-toggle-refinance');
+    const purchaseFields = document.getElementById('purchase_fields');
 })

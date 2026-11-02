@@ -81,4 +81,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     btnTogglePurchase.addEventListener('click', () => setLoanType('purchase'));
+    btnToggleRefinance.addEventListener('click', () => setLoanType('refinance'));
 })

@@ -11,4 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const downPaymentInput = document.getElementById('down_payment');
     const balanceInput = document.getElementById('current_balance');
     const refiGoalSelect = document.getElementById('refi_goal');
+    const indicator = document.getElementById('step-indicator');
+    const successEl = document.getElementById('step-success');
+    const jsonOutput = document.getElementById('jsonOutput');
 })

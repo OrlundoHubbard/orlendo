@@ -72,4 +72,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         showStep(nextStep);
     }
+
+    // Form Reset
+    function resetForm() {
+        form.reset();
+        setLoanType('purchase');
+        showStep(1);
+    }
+
+    btnTogglePurchase.addEventListener('click', () => setLoanType('purchase'));
 })

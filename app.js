@@ -14,4 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const indicator = document.getElementById('step-indicator');
     const successEl = document.getElementById('step-success');
     const jsonOutput = document.getElementById('jsonOutput');
+
+    // Toggle Loan Goal (Purchase vs Refinance)
+    function setLoanType(type) {
+        activeLoanType = type;
+        loanPurposeInput.value = type;
+
+        if (type === 'purchase') {
+            btnTogglePurchase.className = 'py-2 text-xs font-bold rounded-md bg-white text-red-600 shadow-sm transition';
+            btnToggleRefinance.className = 'py-2 text-xs font-bold rounded-md text-zinc-600 hover:text-zinc-900 transition';
+        }
+    }
 })

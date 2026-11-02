@@ -33,6 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
             refiGoalSelect.disabled = true;
         } else {
             btnToggleRefinance.className = 'py-2 text-xs font-bold rounded-md bg-white text-red-600 shadow-sm transition';
+            btnTogglePurchase.className = 'py-2 text-xs font-bold rounded-md text-zinc-600 hover:text-zinc-900 transition';
+            propLabel.textContent = 'Estimated Home Value ($)';
+
+            purchaseFields.classList.add('hidden');
+            refiFields.classList.remove('hidden');
             
         }
     }

@@ -58,4 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
             target.classList.add('block');
         }
     }
+
+    // Step Validation Gate
+    function validateAndNext(currentStep, nextStep) {
+        const stepContainer = document.getElementById('step-' + currentStep);
+        const inputs = stepContainer.querySelectorAll('input:not([disabled]), select:not([disabled])')
+
+        for (const input of inputs) {
+            if (!input.checkValidtiy()) {
+                input.reportValidity();
+                return;
+            }
+        }
+        showStep(nextStep);
+    }
 })

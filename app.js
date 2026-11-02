@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
             downPaymentInput.disabled = false;
             balanceInput.disabled = true;
             refiGoalSelect.disabled = true;
+        } else {
+            btnToggleRefinance.className = 'py-2 text-xs font-bold rounded-md bg-white text-red-600 shadow-sm transition';
+            
         }
     }
 })

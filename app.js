@@ -38,7 +38,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             purchaseFields.classList.add('hidden');
             refiFields.classList.remove('hidden');
-            
+
+            downPaymentInput.disabled = true;
+            balanceInput.disabled = false;
+            refiGoalSelect.disabled = false;  
+        }
+    }
+
+    // Display Step Navigation
+    function showStep(stepNum) {
+        document.querySelectorAll('.step').forEach(el => {
+            el.classList.add('hidden');
+            el.classList.remove('block');
+        });
+
+        const target = document.getElementById('step-' + stepNum);
+        if (target) {
+            target.classList.remove('hidden');
+            target.classList.add('block');
         }
     }
 })

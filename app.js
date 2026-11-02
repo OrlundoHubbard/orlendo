@@ -7,4 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnTogglePurchase = document.getElementById('btn-toggle-purchase');
     const propLabel = document.getElementById('btn-toggle-refinance');
     const purchaseFields = document.getElementById('purchase_fields');
+    const refiFields = document.getElementById('refinance_fields');
+    const downPaymentInput = document.getElementById('down_payment');
+    const balanceInput = document.getElementById('current_balance');
+    const refiGoalSelect = document.getElementById('refi_goal');
 })

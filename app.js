@@ -23,6 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (type === 'purchase') {
             btnTogglePurchase.className = 'py-2 text-xs font-bold rounded-md bg-white text-red-600 shadow-sm transition';
             btnToggleRefinance.className = 'py-2 text-xs font-bold rounded-md text-zinc-600 hover:text-zinc-900 transition';
+            propLabel.textContent = 'Estimated Purchase Price ($)';
+
+            purchaseFields.classList.remove('hidden');
+            refiFields.classList.add('hidden');
+
+            downPaymentInput.disabled = false;
+            balanceInput.disabled = true;
+            refiGoalSelect.disabled = true;
         }
     }
 })

@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const inputs = stepContainer.querySelectorAll('input:not([disabled]), select:not([disabled])')
 
         for (const input of inputs) {
-            if (!input.checkValidtiy()) {
+            if (!input.checkValidity()) {
                 input.reportValidity();
                 return;
             }
@@ -88,4 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btn-step2-back').addEventListener('click', () => showStep(1));
     document.getElementById('btn-step2-next').addEventListener('click', () => validateAndNext(2, 3));
     document.getElementById('btn-step3-back').addEventListener('click', () => showStep(2));
+    document.getElementById('btn-reset').addEventListener('click', resetForm);
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        
+    })
 })

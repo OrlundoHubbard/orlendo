@@ -83,4 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btnTogglePurchase.addEventListener('click', () => setLoanType('purchase'));
     btnToggleRefinance.addEventListener('click', () => setLoanType('refinance'));
+
+    document.getElementById('btn-step1-next').addEventListener('click', () => validateAndNext(1, 2));
+    document.getElementById('btn-step2-back').addEventListener('click', () => showStep(1));
+    document.getElementById('btn-step2-next').addEventListener('click', () => validateAndNext(2, 3));
+    document.getElementById('btn-step3-back').addEventListener('click', () => showStep(2));
 })
